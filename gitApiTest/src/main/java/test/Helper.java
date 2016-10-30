@@ -11,8 +11,4 @@ public class Helper {
 		return obj;
 	}
 	
-	public static String getAccessToken(String access) {
-		String sub=access.substring(access.indexOf("_")+1);
-		return sub;
-	}
 }

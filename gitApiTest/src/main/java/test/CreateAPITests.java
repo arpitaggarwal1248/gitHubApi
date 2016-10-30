@@ -23,14 +23,16 @@ public class CreateAPITests {
 	Config config;
 	CreateRequest obj;
 	ObjectMapper objectMapper;
-	String accessToken, repoUrl,repoName;
+	String repoUrl,repoName;
 	private static String desc="My First Repo";  
-
+	private static String accessToken="0f1b93f336bee1b798696ff06e214bacdd739c07";
+	private static String limitedAccess="";
+	
 	@BeforeTest
 	public void setup() throws Exception
 	{
 		config=Config.getInstance();
-		accessToken=Helper.getAccessToken(config.getConfig("access.token"));
+		accessToken=config.getConfig("access.token");
 		repoUrl=config.getConfig("api.Repo.Url");
 	}
 
@@ -121,7 +123,7 @@ public class CreateAPITests {
 		String delUrl=config.getConfig("delete.repo.Url");
 		String owner=config.getConfig("repo.Owner");
 		repoName=config.getConfig("perm.Repo");
-		String limitedAccess=Helper.getAccessToken(config.getConfig("limited.access.token"));
+		String limitedAccess=config.getConfig("limited.access.token");
 		String createRepoUrl=repoUrl+"?access_token="+accessToken;
 		obj=Helper.setParams(repoName, "Creating repo to delete");
 		objectMapper = new ObjectMapper();
