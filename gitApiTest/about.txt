@@ -1,0 +1,23 @@
+About Project:
+
+This is a maven project developed in Java to test create and delete api of github. I have used below to test this api:
+-- Jackson Mapper- To parse api
+-- Rest Assured- To hit api
+-- Testng- For assertions
+
+Project is added in below repo:
+
+Url: https://github.com/arpitaggarwal1248/gitHubApi
+
+Git clone Url: git@github.com:arpitaggarwal1248/gitHubApi.git
+
+Branch: master
+
+It includes 4 main packages at path /src/main/java
+
+api- It contains all Java classes for request and response of github api.
+config- It contains properties file which contains info like access token, api end point etc.
+test- It contains class named CreateAPITests.java, which has all test methods to test api.
+util- It contains files which provide functionality like encrypt and decrypt data, json mapper and many more.
+
+
