@@ -30,9 +30,10 @@ public class CreateAPITests {
 	public void setup() throws Exception
 	{
 		config=Config.getInstance();
-		accessToken=config.getConfig("access.token");
+		accessToken=Helper.getAccessToken(config.getConfig("access.token"));
 		repoUrl=config.getConfig("api.Repo.Url");
 	}
+
 
 	@Test
 	public void testCreateRepo() throws JsonGenerationException, JsonMappingException, IOException
@@ -120,7 +121,7 @@ public class CreateAPITests {
 		String delUrl=config.getConfig("delete.repo.Url");
 		String owner=config.getConfig("repo.Owner");
 		repoName=config.getConfig("perm.Repo");
-		String limitedAccess=config.getConfig("limited.access.token");
+		String limitedAccess=Helper.getAccessToken(config.getConfig("limited.access.token"));
 		String createRepoUrl=repoUrl+"?access_token="+accessToken;
 		obj=Helper.setParams(repoName, "Creating repo to delete");
 		objectMapper = new ObjectMapper();
@@ -175,5 +176,6 @@ public class CreateAPITests {
 			{null},
 		};
 	}
+	
 
 }
